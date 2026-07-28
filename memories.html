@@ -6,165 +6,656 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ehehehe</title>
+<title>our memories ❤️</title>
+
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Quicksand:wght@500;700&display=swap');
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
 body{
 
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+min-height:100vh;
 
-font-family:Georgia;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+font-family:'Quicksand',sans-serif;
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#fff0f6,
+
+#f8e8ff,
+
+#e7f6ff
+
+);
+
+
+overflow:hidden;
 
 }
 
-.wrapper{
 
-width:85%;
-height:80%;
+/* ---------- sparkles ---------- */
+
+
+.sparkle{
+
+position:absolute;
+
+color:white;
+
+font-size:20px;
+
+animation: sparkle 3s infinite;
+
+}
+
+
+@keyframes sparkle{
+
+0%,100%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.4);
+
+}
+
+}
+
+
+
+/* ---------- scrapbook ---------- */
+
+
+.book{
+
+
+width:90%;
+
+max-width:1200px;
+
+height:80vh;
+
 
 display:flex;
+
+
+background:#fffafc;
+
+
+border-radius:35px;
+
+
+box-shadow:
+
+0 25px 70px rgba(0,0,0,.15);
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.photo-area{
+
+
+width:55%;
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+background:
+
+#fff4f8;
+
+
+position:relative;
+
+}
+
+
+
+/* ---------- polaroid ---------- */
+
+
+.polaroid{
+
+
+width:75%;
+
+height:75%;
+
 
 background:white;
 
-border-radius:25px;
 
-overflow:hidden;
+padding:18px 18px 50px;
 
-box-shadow:0 20px 50px rgba(0,0,0,.15);
 
-}
+box-shadow:
 
-.slideshow{
+0 15px 35px rgba(0,0,0,.18);
 
-flex:1;
+
+transform:rotate(-2deg);
+
+
 position:relative;
-overflow:hidden;
+
 
 }
 
-.slide{
+
+
+.polaroid img{
+
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+
+}
+
+
+.zoom{
+
+animation:zoom 3s infinite alternate;
+
+}
+
+
+@keyframes zoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+
+to{
+
+transform:scale(1.06);
+
+}
+
+}
+
+
+
+.caption{
+
 
 position:absolute;
+
+bottom:15px;
+
+left:0;
+
 width:100%;
-height:100%;
+
+
+text-align:center;
+
+
+font-family:'Caveat',cursive;
+
+
+font-size:30px;
+
+
+color:#555;
+
+
+}
+
+
+
+/* ---------- letter ---------- */
+
+
+.letter{
+
+
+width:45%;
+
+
+padding:60px;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+background:#fffdf8;
+
+
+}
+
+
+.paper{
+
+
+font-family:'Caveat',cursive;
+
+
+font-size:30px;
+
+
+line-height:1.5;
+
+
+color:#555;
+
+
+}
+
+
+.paper h1{
+
+
+font-size:55px;
+
+color:#ff8fb5;
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.signature{
+
+
+margin-top:30px;
+
+text-align:right;
+
+font-size:35px;
+
+}
+
+
+
+/* ---------- ending ---------- */
+
+
+.end{
+
+
+position:absolute;
+
+
+background:white;
+
+
+padding:50px;
+
+border-radius:30px;
+
+
+text-align:center;
+
 
 opacity:0;
 
-transition:opacity 1s;
+
+pointer-events:none;
+
+
+transition:1s;
+
+
+font-family:'Caveat',cursive;
+
+font-size:45px;
+
+color:#ff8fb5;
+
 
 }
 
-.slide img{
 
-width:100%;
-height:100%;
-object-fit:cover;
-
-}
-
-.active{
+.end.show{
 
 opacity:1;
 
 }
 
-.text{
 
-width:35%;
 
-padding:50px;
 
-display:flex;
+@media(max-width:800px){
 
-justify-content:center;
 
-align-items:center;
+.book{
 
-font-size:23px;
+height:90vh;
 
-line-height:1.7;
-
-background:#fff8fb;
+flex-direction:column;
 
 }
 
+
+
+.photo-area{
+
+width:100%;
+
+height:55%;
+
+}
+
+
+
+.letter{
+
+width:100%;
+
+height:45%;
+
+padding:25px;
+
+}
+
+
+
+.paper{
+
+font-size:22px;
+
+}
+
+
+.paper h1{
+
+font-size:40px;
+
+}
+
+
+.polaroid{
+
+width:80%;
+
+height:80%;
+
+}
+
+
+
+}
+
+
+
 </style>
+
 
 </head>
 
+
+
 <body>
 
-<div class="wrapper">
 
-<div class="slideshow">
 
-<div class="slide active">
-<img src="images/1.JPG">
+<div class="book">
+
+
+
+<div class="photo-area">
+
+
+<div class="polaroid">
+
+
+<img id="photo" src="images/1.jpg">
+
+
+<div class="caption" id="caption">
+
+our first memory 💕
+
 </div>
 
-<div class="slide">
-<img src="images/2.jpg">
-</div>
-
-<div class="slide">
-<img src="images/3.jpg">
-</div>
-
-<div class="slide">
-<img src="images/4.jpg">
-</div>
 
 </div>
 
-<div class="text">
 
-<div>
+</div>
 
-<h2>❤️</h2>
+
+
+
+<div class="letter">
+
+
+<div class="paper">
+
+
+<h1>
+for you ❤️
+</h1>
+
 
 <p>
 
-thanks for saying yes i love you sm baby
+I don't think you realize how happy you make me.
 
-i promise ill make i work<3
+<br><br>
 
-this is barely the beginning of us
 
-blank slate new start? 
-  
-P.S. appreciate this 
+Every little moment with you becomes something I want to remember.
+
+<br><br>
+
+
+Thank you for laughing with me, supporting me, and being someone I can always be myself around.
+
+<br><br>
+
+
+I can't wait for all the memories we haven't made yet.
 
 </p>
 
-</div>
+
+
+<div class="signature">
+
+love, me 💕
 
 </div>
 
+
+
 </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="end">
+
+to be continued... ✨
+
+<br>
+
+more adventures soon ❤️
+
+</div>
+
+
+
 
 <script>
 
-const slides=document.querySelectorAll(".slide");
 
-let current=0;
+/* ---------- sparkles ---------- */
+
+
+for(let i=0;i<50;i++){
+
+
+let s=document.createElement("div");
+
+s.className="sparkle";
+
+s.innerHTML="✨";
+
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+
+s.style.animationDelay=
+Math.random()*3+"s";
+
+
+document.body.appendChild(s);
+
+
+}
+
+
+
+
+/* ---------- slideshow ---------- */
+
+
+const photos=[
+
+"images/1.jpg",
+
+"images/2.jpg",
+
+"images/3.jpg",
+
+"images/4.jpg"
+
+];
+
+
+
+const captions=[
+
+"our first memory 💕",
+
+"one of my favorite days ✨",
+
+"you make me smile 🩷",
+
+"more memories soon ❤️"
+
+];
+
+
+
+let index=0;
+
+
+const photo=document.getElementById("photo");
+
+const caption=document.getElementById("caption");
+
+
 
 setInterval(()=>{
 
-slides[current].classList.remove("active");
 
-current=(current+1)%slides.length;
+photo.classList.remove("zoom");
 
-slides[current].classList.add("active");
 
-},2500);
+setTimeout(()=>{
+
+
+index++;
+
+
+if(index>=photos.length){
+
+
+document.querySelector(".end")
+.classList.add("show");
+
+
+index=0;
+
+
+}
+
+
+photo.src=photos[index];
+
+
+caption.innerHTML=captions[index];
+
+
+photo.classList.add("zoom");
+
+
+
+},300);
+
+
+
+},3500);
+
+
 
 </script>
+
+
 
 </body>
 
