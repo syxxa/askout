@@ -6,9 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>hi cutie</title>
+<title>hi cutie ❤️</title>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Quicksand:wght@500;700&display=swap');
+
 
 *{
     margin:0;
@@ -16,75 +19,123 @@
     box-sizing:border-box;
 }
 
-html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:Georgia, serif;
-}
-
-/* ---------- Background ---------- */
 
 body{
 
-background:linear-gradient(
-135deg,
-#ffd6e8,
-#ffe8fa,
-#e7f2ff,
-#dff8f0
-);
-
-background-size:400% 400%;
-
-animation:gradient 15s ease infinite;
+height:100vh;
+overflow:hidden;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
+font-family:'Quicksand',sans-serif;
+
+background:linear-gradient(
+120deg,
+#ffd9e8,
+#f5dcff,
+#dff3ff,
+#fff1d6
+);
+
+background-size:400% 400%;
+
+animation:bgmove 15s ease infinite;
+
 }
 
-@keyframes gradient{
 
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+@keyframes bgmove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
 
 }
 
-/* ---------- Floating hearts ---------- */
+
+/* ---------- stars ---------- */
+
+
+.star{
+
+position:absolute;
+
+width:4px;
+height:4px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:0 0 15px white;
+
+animation:twinkle 2s infinite alternate;
+
+}
+
+
+@keyframes twinkle{
+
+from{
+opacity:.2;
+transform:scale(.5);
+}
+
+to{
+opacity:1;
+transform:scale(1.5);
+}
+
+}
+
+
+
+/* ---------- hearts ---------- */
+
 
 .heart{
 
 position:absolute;
-bottom:-50px;
+
+bottom:-40px;
 
 font-size:25px;
 
-animation:float linear infinite;
+animation:rise linear forwards;
 
-opacity:.65;
-
-pointer-events:none;
+opacity:.7;
 
 }
 
-@keyframes float{
+
+@keyframes rise{
+
 
 0%{
 
-transform:translateY(0) rotate(0deg);
+transform:translateY(0) rotate(0);
 
 opacity:0;
 
 }
+
 
 20%{
 
 opacity:.8;
 
 }
+
 
 100%{
 
@@ -96,120 +147,129 @@ opacity:0;
 
 }
 
-/* ---------- Stars ---------- */
 
-.star{
 
-position:absolute;
 
-background:white;
+/* ---------- main card ---------- */
 
-width:3px;
-
-height:3px;
-
-border-radius:50%;
-
-box-shadow:0 0 12px white;
-
-animation:twinkle 2s infinite alternate;
-
-}
-
-@keyframes twinkle{
-
-from{
-
-opacity:.2;
-transform:scale(.5);
-
-}
-
-to{
-
-opacity:1;
-transform:scale(1.6);
-
-}
-
-}
-
-/* ---------- Main Card ---------- */
 
 .card{
 
-width:700px;
+width:650px;
+
 max-width:90%;
 
-padding:60px;
-
-border-radius:35px;
-
-backdrop-filter:blur(18px);
-
-background:rgba(255,255,255,.23);
-
-border:1px solid rgba(255,255,255,.35);
-
-box-shadow:0 15px 50px rgba(0,0,0,.12);
+padding:55px;
 
 text-align:center;
 
-position:relative;
+
+background:rgba(255,255,255,.28);
+
+backdrop-filter:blur(20px);
+
+
+border-radius:40px;
+
+
+border:1px solid rgba(255,255,255,.5);
+
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.15);
+
+
+transition:.8s;
 
 }
+
+
 
 h1{
 
-font-size:52px;
+font-family:'Caveat',cursive;
+
+font-size:70px;
 
 color:white;
 
-text-shadow:0 3px 10px rgba(0,0,0,.15);
+text-shadow:
 
-margin-bottom:20px;
+0 4px 15px rgba(0,0,0,.15);
+
+
+margin-bottom:15px;
 
 }
 
-.subtitle{
 
-font-size:23px;
+.question{
+
+font-size:27px;
 
 color:white;
 
-margin-bottom:55px;
+margin-bottom:45px;
 
 }
 
-/* ---------- Buttons ---------- */
 
-#yes,#no{
 
-padding:18px 38px;
+
+/* ---------- buttons ---------- */
+
+
+.buttons{
+
+position:relative;
+
+width:380px;
+
+height:90px;
+
+margin:auto;
+
+}
+
+
+button{
+
+font-family:'Quicksand',sans-serif;
 
 font-size:22px;
 
-border:none;
+font-weight:bold;
 
-border-radius:18px;
+padding:17px 38px;
+
+border-radius:20px;
+
+border:none;
 
 cursor:pointer;
 
-transition:.3s;
+position:absolute;
 
-font-weight:bold;
+transition:.25s;
 
 }
+
 
 #yes{
 
-background:#ff7ca8;
+left:45px;
+
+background:#ff8fb5;
 
 color:white;
 
-box-shadow:0 8px 20px rgba(255,124,168,.4);
+box-shadow:
+
+0 10px 25px rgba(255,100,160,.35);
 
 }
+
 
 #yes:hover{
 
@@ -217,208 +277,410 @@ transform:scale(1.12);
 
 }
 
+
+
 #no{
 
-position:absolute;
+left:235px;
 
 background:white;
 
-color:#555;
-
-left:54%;
-top:77%;
+color:#777;
 
 }
 
-/* ---------- Fade ---------- */
+
+
+/* funny message */
+
+
+#message{
+
+position:absolute;
+
+width:100%;
+
+bottom:-35px;
+
+left:0;
+
+color:white;
+
+font-size:18px;
+
+opacity:0;
+
+transition:.3s;
+
+}
+
+
+
+/* fade */
 
 .fade{
 
-animation:fadeout .8s forwards;
-
-}
-
-@keyframes fadeout{
-
-to{
-
 opacity:0;
-transform:scale(.95);
+
+transform:scale(.9);
 
 }
 
-}
 
 </style>
 
 </head>
 
+
+
 <body>
+
+
 
 <div class="card" id="card">
 
+
 <h1>i think you're cute 🩷</h1>
 
-<div class="subtitle">
+
+<div class="question">
 
 will you be my boyfriend?
 
 </div>
 
-<button id="yes">Yes 💖</button>
 
-<button id="no">No</button>
+
+<div class="buttons">
+
+
+<button id="yes">
+Yes 💖
+</button>
+
+
+<button id="no">
+No 🤍
+</button>
+
+
+<div id="message">
+</div>
+
 
 </div>
 
+
+</div>
+
+
+
+
+
 <script>
 
-/* ---------------- Stars ---------------- */
 
-for(let i=0;i<70;i++){
 
-const s=document.createElement("div");
+/* ---------- stars ---------- */
 
-s.className="star";
 
-s.style.left=Math.random()*100+"vw";
+for(let i=0;i<80;i++){
 
-s.style.top=Math.random()*100+"vh";
 
-s.style.animationDelay=Math.random()*2+"s";
+let star=document.createElement("div");
 
-document.body.appendChild(s);
+star.className="star";
+
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+
+star.style.animationDelay=Math.random()*3+"s";
+
+
+document.body.appendChild(star);
+
 
 }
 
-/* ---------------- Hearts ---------------- */
 
-const emojis=["💖","💕","💗","💘","🩷"];
+
+/* ---------- hearts ---------- */
+
 
 setInterval(()=>{
 
-const h=document.createElement("div");
 
-h.className="heart";
+let heart=document.createElement("div");
 
-h.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
 
-h.style.left=Math.random()*100+"vw";
+heart.className="heart";
 
-h.style.animationDuration=6+Math.random()*5+"s";
 
-document.body.appendChild(h);
+heart.innerHTML=
+["💖","💕","🩷","✨","💗"]
+[Math.floor(Math.random()*5)];
+
+
+heart.style.left=Math.random()*100+"vw";
+
+
+heart.style.animationDuration=
+(6+Math.random()*6)+"s";
+
+
+document.body.appendChild(heart);
+
+
 
 setTimeout(()=>{
 
-h.remove();
+heart.remove();
 
-},11000);
+},12000);
 
-},500);
 
-/* ---------------- No Button ---------------- */
+
+},600);
+
+
+
+
+
+
+/* ---------- runaway no button ---------- */
+
 
 const no=document.getElementById("no");
 
-let x=window.innerWidth*.58;
+const message=document.getElementById("message");
 
-let y=window.innerHeight*.68;
+
+let escaped=false;
+
+
+const messages=[
+
+"hehe nice try 😌",
+
+"almost got me 💨",
+
+"nope hehe 💕",
+
+"try again 🤭",
+
+"you really thought 😂"
+
+];
+
+
 
 document.addEventListener("mousemove",(e)=>{
 
+
 const rect=no.getBoundingClientRect();
 
-const cx=rect.left+rect.width/2;
-const cy=rect.top+rect.height/2;
 
-const dx=e.clientX-cx;
-const dy=e.clientY-cy;
+const centerX=rect.left+rect.width/2;
 
-const dist=Math.sqrt(dx*dx+dy*dy);
+const centerY=rect.top+rect.height/2;
 
-if(dist<170){
 
-x+=(-dx/dist)*42;
-y+=(-dy/dist)*42;
 
-x=Math.max(0,Math.min(window.innerWidth-rect.width,x));
-y=Math.max(0,Math.min(window.innerHeight-rect.height,y));
+let dx=e.clientX-centerX;
 
-no.style.left=x+"px";
-no.style.top=y+"px";
+let dy=e.clientY-centerY;
+
+
+
+let distance=Math.sqrt(dx*dx+dy*dy);
+
+
+
+if(distance<100 && !escaped){
+
+
+escaped=true;
+
+
+
+message.innerHTML=
+messages[Math.floor(Math.random()*messages.length)];
+
+
+message.style.opacity=1;
+
+
+
+// tiny shake
+
+no.style.transform="rotate(8deg)";
+
+
+setTimeout(()=>{
+
+
+no.style.transform="rotate(-8deg)";
+
+
+},100);
+
+
+
+
+
+setTimeout(()=>{
+
+
+
+let newX=Math.random()*170+200;
+
+let newY=Math.random()*40-20;
+
+
+no.style.left=newX+"px";
+
+no.style.top=newY+"px";
+
+
+
+message.style.opacity=0;
+
+
+setTimeout(()=>{
+
+escaped=false;
+
+},500);
+
+
+
+},200);
+
+
 
 }
 
+
+
 });
 
-/* ---------------- Yes ---------------- */
+
+
+
+
+/* ---------- yes button ---------- */
+
 
 document.getElementById("yes").onclick=()=>{
 
-for(let i=0;i<180;i++){
 
-const c=document.createElement("div");
+// confetti
 
-c.innerHTML=["🎉","✨","💖","💕"][Math.floor(Math.random()*4)];
+
+for(let i=0;i<150;i++){
+
+
+let c=document.createElement("div");
+
+
+c.innerHTML=
+["💖","🎉","✨","💕"]
+[Math.floor(Math.random()*4)];
+
+
 
 c.style.position="fixed";
 
-c.style.left=50+"vw";
+c.style.left="50vw";
 
-c.style.top=50+"vh";
+c.style.top="50vh";
 
-c.style.fontSize=18+Math.random()*20+"px";
+c.style.fontSize=
+(20+Math.random()*20)+"px";
 
-c.style.pointerEvents="none";
 
-const angle=Math.random()*Math.PI*2;
 
-const speed=4+Math.random()*8;
+let angle=Math.random()*Math.PI*2;
+
+let speed=5+Math.random()*10;
+
+
+
+let x=innerWidth/2;
+
+let y=innerHeight/2;
+
 
 let vx=Math.cos(angle)*speed;
+
 let vy=Math.sin(angle)*speed;
+
+
 
 document.body.appendChild(c);
 
-let px=window.innerWidth/2;
-let py=window.innerHeight/2;
 
-const id=setInterval(()=>{
 
-px+=vx;
-py+=vy;
+let anim=setInterval(()=>{
 
-vy+=0.18;
 
-c.style.left=px+"px";
-c.style.top=py+"px";
+x+=vx;
 
-c.style.opacity-=0.015;
+y+=vy;
 
-if(py>window.innerHeight+100){
+vy+=.15;
 
-clearInterval(id);
+
+c.style.left=x+"px";
+
+c.style.top=y+"px";
+
+
+c.style.opacity-=.02;
+
+
+
+if(c.style.opacity<=0){
+
+clearInterval(anim);
 
 c.remove();
 
 }
 
+
 },16);
+
+
 
 }
 
-document.getElementById("card").classList.add("fade");
+
+
+
+document.getElementById("card")
+.classList.add("fade");
+
+
 
 setTimeout(()=>{
 
 window.location="memories.html";
 
-},900);
+},1000);
+
+
 
 };
 
+
+
 </script>
 
+
 </body>
+
 </html>
